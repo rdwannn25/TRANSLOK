@@ -2,6 +2,8 @@
 import React from "react";
 // Catatan: Sesuaikan "../data/translokdata.js" atau "../../data/translokdata.js" dengan posisi file Header.jsx Anda
 import { OPERATIONAL_INFO, STOPS_DATA } from "../../data/translokdata.js";
+import posterImage from "../../assets/images/poster1.jpg"; // Pastikan path ini sesuai dengan struktur folder Anda
+import { ArrowRightLeft, Clock, Building2, CarFront, BusFront, Waypoints } from "lucide-react";
 
 export default function Header({
   selectedMode = "ALL",
@@ -14,9 +16,13 @@ export default function Header({
       {/* Top Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#1AAA4A] flex items-center justify-center text-white font-headline font-bold text-xl shadow-sm">
-            T
-          </div>
+          {/* Tambahkan class w-11 h-11 dan object-contain, serta perbaiki src path */}
+          <img 
+            src="/Poster2.png" 
+            alt="Logo Translok" 
+            className="w-11 h-11 object-contain drop-shadow-sm" 
+          />
+          
           <div>
             <div className="flex items-center gap-2">
               <h1 className="font-headline font-bold text-lg text-gray-900 tracking-tight">
@@ -44,7 +50,74 @@ export default function Header({
         </div>
       </div>
 
-      {/* Hero Info & Mode Switcher Section (FR-01, FR-03, FR-09, FR-13) */}
+           <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="relative w-full rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-white">
+              
+              {/* Latar Belakang Gambar */}
+              <div className="absolute inset-0">
+                <img 
+                  src={posterImage} 
+                  alt="Latar Translok Bandung" 
+                  className="w-full h-full object-cover object-center"
+                />
+                {/* Overlay Gradien agar Teks Terbaca */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+              </div>
+
+              {/* Konten Hero (Teks & Kartu) */}
+              <div className="relative z-10 p-6 md:p-10 flex flex-col justify-end min-h-[360px] md:min-h-[420px]">
+                
+                {/* Tipografi */}
+                <div className="max-w-2xl mb-8">
+                  <span className="inline-block px-3 py-1 bg-[#1AAA4A]/90 text-white text-xs font-bold uppercase tracking-wider rounded-full mb-3 backdrop-blur-sm shadow-sm">
+                    Bandung Raya
+                  </span>
+                  <h1 className="text-3xl md:text-5xl font-black text-white leading-tight drop-shadow-md">
+                    LAYANAN TERPADU <span className="text-[#FFCB07]">TRANSLOK</span>
+                  </h1>
+                  <p className="mt-3 text-gray-200 text-sm md:text-base font-medium drop-shadow">
+                    Sistem informasi rute, jadwal, dan integrasi armada Angkot & Bus BRT demi perjalanan yang nyaman dan tepat waktu.
+                  </p>
+                </div>
+
+                {/* Glassmorphism Info Cards (Menggantikan elemen statis di poster asli) */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">   
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex items-center gap-4 transition hover:bg-white/20">
+                      <div className="w-12 h-12 bg-[#1A72BA]/80 rounded-xl flex items-center justify-center text-white shrink-0 shadow-inner">
+                        <ArrowRightLeft className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-sm">Armada Angkot</h3>
+                        <p className="text-gray-300 text-xs mt-0.5">Rute & Informasi Terintegrasi</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex items-center gap-4 transition hover:bg-white/20">
+                      <div className="w-12 h-12 bg-[#FFCB07]/90 rounded-xl flex items-center justify-center text-gray-900 shrink-0 shadow-inner">
+                        <Clock className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-sm">Armada Bus BRT</h3>
+                        <p className="text-gray-300 text-xs mt-0.5">Jadwal Tepat Waktu</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex items-center gap-4 transition hover:bg-white/20">
+                      <div className="w-12 h-12 bg-[#1AAA4A]/80 rounded-xl flex items-center justify-center text-white shrink-0 shadow-inner">
+                        <Building2 className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-sm">Fasilitas Halte</h3>
+                        <p className="text-gray-300 text-xs mt-0.5">Pemberhentian Nyaman & Aman</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             {/* Hero Info & Mode Switcher Section (FR-01, FR-03, FR-09, FR-13) */}
       <div className="bg-[#F4F6F4] py-5 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5">
@@ -57,7 +130,7 @@ export default function Header({
                 serta zona aman penaikan dan penurunan penumpang di koridor Bandung Raya.
               </p>
             </div>
-
+          
             {/* Pemilih Moda Transportasi (FR-03) */}
             <div className="inline-flex p-1 rounded-xl bg-white border border-gray-200 shadow-xs self-start">
               {[
@@ -88,6 +161,7 @@ export default function Header({
             </div>
           </div>
 
+
           {/* 3 Kartu Informasi Utama: Angkot, Bus BRT, dan Info Titik Transit */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Card 1: Informasi Angkot (Tertiary Blue #1A72BA) */}
@@ -103,9 +177,7 @@ export default function Header({
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-[#1A72BA]/10 text-[#1A72BA]">
                   CARI ANGKOT
                 </span>
-                <span className="text-xs font-medium text-[#71796F]">
-              
-                </span>
+                <CarFront className="w-5 h-5 text-[#1A72BA]" />
               </div>
               <div className="flex items-baseline justify-between">
                 <div>
@@ -138,9 +210,7 @@ export default function Header({
                 <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-[#FFCB07]/25 text-gray-900">
                   CARI BUS
                 </span>
-                <span className="text-xs font-medium text-[#71796F]">
-                 
-                </span>
+                <BusFront className="w-5 h-5 text-[#FFCB07]" />
               </div>
               <div className="flex items-baseline justify-between">
                 <div>

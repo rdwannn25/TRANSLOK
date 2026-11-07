@@ -9,14 +9,17 @@ export default function Footer() {
         {/* Bagian Logo Tengah */}
         <div className="flex justify-center text-[#1AAA4A]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1AAA4A] flex items-center justify-center text-white font-bold text-xl shadow-sm">
-              T
-            </div>
+            {/* Logo Gambar yang Diperbarui */}
+            <img 
+              src="/Poster2.png" 
+              alt="Logo Translok" 
+              className="w-12 h-12 object-contain drop-shadow-sm transition-all duration-300"
+            />
             <div className="text-left">
-              <h1 className="font-bold text-xl text-gray-900 tracking-tight leading-none mb-1">
+              <h1 className="font-bold text-xl  tracking-tight leading-none mb-1">
                 TRANSLOK
               </h1>
-              <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-none">
+              <p className="text-[10px]  font-bold uppercase tracking-widest leading-none">
                 Bandung Raya
               </p>
             </div>
@@ -50,7 +53,7 @@ export default function Footer() {
           </li>
         </ul>
 
-        {/* Ikon Sosial Media (Opsional, dibiarkan sesuai template asli) */}
+        {/* Ikon Sosial Media (Dibiarkan sesuai template asli) */}
         <ul className="mt-12 flex justify-center gap-6 md:gap-8">
           <li>
             <a href="#" rel="noreferrer" target="_blank" className="text-gray-400 transition hover:text-[#1AAA4A]">
@@ -80,7 +83,7 @@ export default function Footer() {
         
         {/* Copyright */}
         <p className="mt-12 text-center text-xs text-gray-500 font-medium">
-          &copy; 2026 TRANSLOK Kota Bandung. Hak Cipta Dilindungi Undang-Undang.
+          &copy; {new Date().getFullYear()} TRANSLOK Kota Bandung. Hak Cipta Dilindungi Undang-Undang.
         </p>
       </div>
     </footer>

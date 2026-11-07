@@ -5,7 +5,7 @@ import RouteMapSVG from "../components/RouteMapSVG.jsx";
 import StopExplorerPanel from "../components/StopExplorerPanel.jsx";
 import TripSummaryCard from "../components/TripSummaryCard.jsx";
 import { STOPS_DATA, ROUTE_SEGMENTS } from "../data/translokdata.js";
-import Hero from "../components/common/Hero.jsx";
+import posterImage from "../assets/images/poster1.jpg";
 
 export default function Home() {
   const outletContext = useOutletContext() || {};
@@ -131,7 +131,6 @@ const handleSwapLocations = () => {
   return (
     <div className="bg-[#F4F6F4] text-slate-800 flex flex-col pb-12">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-5">
-      
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-8">
             <RouteMapSVG

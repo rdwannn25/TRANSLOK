@@ -11,6 +11,8 @@ export const OPERATIONAL_INFO = {
             name: "Angkot Feeder",
             corridorName: "Trayek Cibeureum – St. Hall – Tegallega – Cicadas",
             tariff: 3000, // FR-09: Rp3.000 flat
+            activeFleet: 42, // FR-13: Informasi armada beroperasi
+            totalFleet: 50,
             tariffLabel: "Rp 3.000 (Flat Jauh/Dekat)",
             colorHex: "#1A72BA",
             dropOffRule: "Bisa turun di halte resmi atau sepanjang jalur hijau (zona aman).",
@@ -20,6 +22,8 @@ export const OPERATIONAL_INFO = {
             name: "Bus BRT Bandung Raya",
             corridorName: "Koridor Utama Barat – Timur & Loop Selatan",
             tariff: 4900, // FR-09: Sesuai ketentuan resmi
+            activeFleet: 18, // FR-13: Informasi armada beroperasi
+            totalFleet: 20,
             tariffLabel: "Rp 4.900 (Tarif Resmi Koridor)",
             colorHex: "#FFCB07",
             dropOffRule: "Wajib naik dan turun hanya pada Titik Halte Resmi BRT.",
