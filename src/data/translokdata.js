@@ -12,8 +12,6 @@ export const OPERATIONAL_INFO = {
             corridorName: "Trayek Cibeureum – St. Hall – Tegallega – Cicadas",
             tariff: 3000, // FR-09: Rp3.000 flat
             tariffLabel: "Rp 3.000 (Flat Jauh/Dekat)",
-            activeFleet: 42, // FR-13: Informasi armada beroperasi
-            totalFleet: 50,
             colorHex: "#1A72BA",
             dropOffRule: "Bisa turun di halte resmi atau sepanjang jalur hijau (zona aman).",
         },
@@ -23,12 +21,40 @@ export const OPERATIONAL_INFO = {
             corridorName: "Koridor Utama Barat – Timur & Loop Selatan",
             tariff: 4900, // FR-09: Sesuai ketentuan resmi
             tariffLabel: "Rp 4.900 (Tarif Resmi Koridor)",
-            activeFleet: 18, // FR-13
-            totalFleet: 20,
             colorHex: "#FFCB07",
             dropOffRule: "Wajib naik dan turun hanya pada Titik Halte Resmi BRT.",
         },
     },
+};
+
+// src/data/translokdata.js
+
+// ... (kode yang sudah ada sebelumnya) ...
+
+/**
+ * Fungsi untuk menghasilkan jadwal dinamis berdasarkan waktu saat ini.
+ * @param {number} baseInterval - Interval antar armada dalam menit (default 8)
+ * @param {number} count - Jumlah jadwal yang ingin ditampilkan (default 2)
+ */
+export const getLiveSchedules = (baseInterval = 8, count = 2) => {
+    const schedules = [];
+    const now = new Date();
+
+    // Memberikan jeda kedatangan armada pertama (2 hingga 6 menit dari waktu saat ini)
+    // Menggunakan operasi modulus agar hasilnya konsisten di menit yang sama
+    const offsetFirst = (now.getMinutes() % 5) + 2;
+
+    for (let i = 0; i < count; i++) {
+        // Kalkulasi: Waktu sekarang + offset pertama + (interval armada berikutnya)
+        const nextTime = new Date(now.getTime() + ((offsetFirst + (i * baseInterval)) * 60000));
+
+        // Format ke dalam HH:MM
+        const hours = nextTime.getHours().toString().padStart(2, "0");
+        const minutes = nextTime.getMinutes().toString().padStart(2, "0");
+        schedules.push(`${hours}:${minutes}`);
+    }
+
+    return schedules;
 };
 
 // Daftar titik pemberhentian sesuai peta rute.jpg (FR-04, FR-05, FR-06)

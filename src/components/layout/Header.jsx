@@ -101,15 +101,15 @@ export default function Header({
             >
               <div className="flex items-center justify-between mb-2.5">
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-[#1A72BA]/10 text-[#1A72BA]">
-                  ANGKOT FEEDER
+                  CARI ANGKOT
                 </span>
                 <span className="text-xs font-medium text-[#71796F]">
-                  Armada Beroperasi (FR-13)
+              
                 </span>
               </div>
               <div className="flex items-baseline justify-between">
                 <div>
-                  <p className="text-xs text-[#71796F]">Tarif Resmi (FR-09)</p>
+                  <p className="text-xs text-[#71796F]"></p>
                   <p className="font-headline text-lg sm:text-xl font-bold text-gray-900">
                     {OPERATIONAL_INFO.modes.ANGKOT.tariffLabel}
                   </p>
@@ -119,14 +119,10 @@ export default function Header({
                     {OPERATIONAL_INFO.modes.ANGKOT.activeFleet}
                   </span>
                   <span className="text-xs text-[#71796F]">
-                    /{OPERATIONAL_INFO.modes.ANGKOT.totalFleet} unit
+                    /{OPERATIONAL_INFO.modes.ANGKOT.totalFleet} 
                   </span>
                 </div>
               </div>
-              <p className="mt-2.5 pt-2 border-t border-gray-100 text-xs text-[#71796F]">
-                <strong className="text-gray-800">Aturan Turun:</strong>{" "}
-                {OPERATIONAL_INFO.modes.ANGKOT.dropOffRule}
-              </p>
             </div>
 
             {/* Card 2: Informasi Bus BRT (Secondary Yellow #FFCB07) */}
@@ -140,15 +136,15 @@ export default function Header({
             >
               <div className="flex items-center justify-between mb-2.5">
                 <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-[#FFCB07]/25 text-gray-900">
-                  BUS BRT BANDUNG RAYA
+                  CARI BUS
                 </span>
                 <span className="text-xs font-medium text-[#71796F]">
-                  Armada Beroperasi (FR-13)
+                 
                 </span>
               </div>
               <div className="flex items-baseline justify-between">
                 <div>
-                  <p className="text-xs text-[#71796F]">Tarif Resmi (FR-09)</p>
+                  <p className="text-xs text-[#71796F]"></p>
                   <p className="font-headline text-lg sm:text-xl font-bold text-gray-900">
                     {OPERATIONAL_INFO.modes.BRT.tariffLabel}
                   </p>
@@ -158,14 +154,10 @@ export default function Header({
                     {OPERATIONAL_INFO.modes.BRT.activeFleet}
                   </span>
                   <span className="text-xs text-[#71796F]">
-                    /{OPERATIONAL_INFO.modes.BRT.totalFleet} unit
+                    /{OPERATIONAL_INFO.modes.BRT.totalFleet} 
                   </span>
                 </div>
               </div>
-              <p className="mt-2.5 pt-2 border-t border-gray-100 text-xs text-[#71796F]">
-                <strong className="text-gray-800">Aturan Turun:</strong>{" "}
-                {OPERATIONAL_INFO.modes.BRT.dropOffRule}
-              </p>
             </div>
 
             {/* Card 3: Ringkasan Halte & Titik Transit Integrasi (Primary Green #1AAA4A) */}
@@ -201,10 +193,6 @@ export default function Header({
                   </span>
                 </div>
               </div>
-              <p className="mt-2.5 pt-2 border-t border-gray-100 text-xs text-[#71796F]">
-                <strong className="text-gray-800">Frekuensi:</strong> Armada melintas
-                setiap {OPERATIONAL_INFO.headwayMinutes} di setiap titik halte.
-              </p>
             </div>
           </div>
         </div>

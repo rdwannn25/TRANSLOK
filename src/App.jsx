@@ -4,11 +4,9 @@ import { Suspense, lazy } from 'react';
 import AppLayout from './components/layout/AppLayout.jsx';
 
 import NotFound from './pages/NotFound.jsx';
-import PetaTransportasi from './pages/PetaTransportasi.jsx';
+import Loader from './pages/Loader.jsx';
 
 const Home = lazy(() => import('./pages/Home.jsx'));
-
-const PageLoader = () => <div>Loading page...</div>;
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +17,8 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<PageLoader />}>
-            <PetaTransportasi />
+          <Suspense fallback={<Loader />}>
+            <Home />
           </Suspense>
         ),
       },
